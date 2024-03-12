@@ -25,10 +25,11 @@ interface Props {
 const drawerWidth = 240;
 
 const navItems = [
-  { name: "Apie mane", route: "/about" },
-  { name: "Paslaugos", route: "/services" },
+  { name: "Home", route: "/" },
+  { name: "About me", route: "/aboutMe" },
   { name: "Portfolio", route: "/portfolio" },
-  { name: "Kontaktai", route: "/contacts" },
+  { name: "Setup", route: "/setup" },
+  { name: "Contacts", route: "/contacts" },
 ];
 
 const DrawerAppBar = ({ window }: Props) => {
