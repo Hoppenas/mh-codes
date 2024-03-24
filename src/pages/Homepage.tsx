@@ -1,27 +1,37 @@
-import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Grid, useMediaQuery } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { minWidth } from "../contstants/styleConstants";
+import { minWidth } from "../constants/styleConstants";
+import AnimatedText from "../components/AnimatedText/AnimatedText";
+import MButton from "../components/MButton/MButton";
+import FollowMeBar from "../components/FollowMeBar/FollowMeBar";
 
 const HomePage = () => {
   const navigate = useNavigate();
   const matches = useMediaQuery(`(min-width:${minWidth})`);
 
   return (
-    <Grid container width="100%" justifyContent="center" paddingTop="20%">
+    <Grid
+      container
+      width="100%"
+      justifyContent="center"
+      alignContent="center"
+      height="100%"
+    >
       <Grid
         item
         container
         direction="column"
         width="fit-content"
         alignItems="center"
+        maxWidth="80%"
       >
-        <Typography variant="h1">MARTYNAS</Typography>
-        <Typography variant="h6" marginBottom={1}>
-          FRONTEND ENGINEER
-        </Typography>
-        <Button variant="contained" fullWidth color="secondary">
-          Contact with me
-        </Button>
+        <AnimatedText text="MARTYNAS" />
+        <AnimatedText text="FRONTEND ENGINEER" isSubText={true} />
+        <MButton
+          name="Contact with me"
+          handleClick={() => navigate("contacts")}
+        />
+        <FollowMeBar />
       </Grid>
     </Grid>
   );

@@ -1,6 +1,6 @@
 import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { minWidth } from "../contstants/styleConstants";
+import { minWidth } from "../constants/styleConstants";
 
 const ContactPage = () => {
   const navigate = useNavigate();

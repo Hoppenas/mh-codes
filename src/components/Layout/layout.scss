@@ -1,0 +1,27 @@
+.background {
+  animation: kenburns-top 40s ease-out infinite both;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+@keyframes kenburns-top {
+  0% {
+    transform: scale(1) translate(0, 0);
+    transform-origin: 16% 84%;
+  }
+  50% {
+    transform: scale(1.25) translate(-20px, 15px);
+    transform-origin: left bottom;
+  }
+  55% {
+    transform: scale(1.25) translate(-20px, 15px);
+    transform-origin: left bottom;
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+    transform-origin: 16% 84%;
+  }
+}
