@@ -11,27 +11,29 @@ interface Props {}
 const Layout = ({}: Props) => {
   const matches = useMediaQuery(`(min-width:${minWidth})`);
   return (
-    <Box
-      overflow="hidden"
-      position="relative"
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        height: "100vh",
-        width: "100%",
-        background: "#0e0e0d",
-        color: "#FFF",
-      }}
-    >
-      <div
-        className="background"
-        style={{
-          backgroundImage: `url(${background})`,
-        }}
-      />
+    <Box height="100vh">
       <DrawerAppBar />
-      <Outlet />
-      <Footer />
+      <Box
+        overflow="hidden"
+        position="relative"
+        height="100%"
+        bgcolor="#0e0e0"
+        color="#FFF"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
+        }}
+      >
+        <div
+          className="background"
+          style={{
+            backgroundImage: `url(${background})`,
+          }}
+        />
+        <Outlet />
+        <Footer />
+      </Box>
     </Box>
   );
 };

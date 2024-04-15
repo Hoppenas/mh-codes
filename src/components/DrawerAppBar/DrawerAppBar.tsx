@@ -72,10 +72,11 @@ const DrawerAppBar = ({ window }: Props) => {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex" }} position="sticky" top={0} zIndex={10}>
       <CssBaseline />
       <AppBar
         component="nav"
+        position="relative"
         sx={{
           color: "#FFF",
           background: "#0e0e0d",

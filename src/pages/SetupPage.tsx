@@ -9,11 +9,12 @@ const SetupPage = () => {
   return (
     <Grid
       container
-      direction={matches ? "row" : "column-reverse"}
-      height={matches ? "97vh" : "auto"}
-      padding="65px 10px 10px"
+      justifyContent="center"
+      alignContent="center"
+      height="100%"
+      zIndex={1}
     >
-      <Typography variant="h6">My Setup</Typography>
+      <Typography>Setup</Typography>
     </Grid>
   );
 };

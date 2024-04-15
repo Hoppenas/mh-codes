@@ -12,12 +12,11 @@ const Footer: FC = () => (
     paddingBottom={2}
   >
     <Typography variant="subtitle2" align="center">
-      {"Copyright © "}
+      {"© "}
       <Link color="inherit" href="https://www.martynas.codes/">
-        Martynas Codes
+        Martynas Hoppenas
       </Link>{" "}
       {getCurrentYear()}
-      {"."}
     </Typography>
   </Box>
 );
