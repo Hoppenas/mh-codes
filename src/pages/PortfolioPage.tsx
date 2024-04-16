@@ -50,13 +50,12 @@ const PortfolioPage = () => {
   return (
     <Grid
       container
-      width="100%"
-      maxWidth="80%"
       justifyContent="space-between"
       margin="auto"
       zIndex={1}
       gap={2}
-      // overflow="hidden"
+      minWidth="100%"
+      paddingX={2}
     >
       {portFolioItems.map((item, index) => (
         <PortfolioItem

@@ -11,7 +11,7 @@ interface Props {}
 const Layout = ({}: Props) => {
   const matches = useMediaQuery(`(min-width:${minWidth})`);
   return (
-    <Box height="100vh">
+    <Box height="100vh" display="flex" sx={{ flexDirection: "column" }}>
       <DrawerAppBar />
       <Box
         overflow="hidden"
@@ -31,8 +31,18 @@ const Layout = ({}: Props) => {
             backgroundImage: `url(${background})`,
           }}
         />
-        <Outlet />
-        <Footer />
+        <Box
+          overflow="scroll"
+          height="100%"
+          flexDirection="column"
+          sx={{
+            width: "100%",
+            display: "flex",
+          }}
+        >
+          <Outlet />
+          <Footer />
+        </Box>
       </Box>
     </Box>
   );
