@@ -1,12 +1,13 @@
-import { Avatar, Grid, Typography } from "@mui/material";
-import { FC } from "react";
-import mgh from "../images/mgh.jpg";
+import { Avatar, Grid, IconButton, Typography } from "@mui/material";
+import { FC, ReactNode } from "react";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 interface IPortfolioItem {
-  image: string;
+  image?: string;
   name: string;
-  description: string;
-  technologies: string;
+  description?: string;
+  technologies?: string;
+  logo?: ReactNode;
 }
 
 const PortfolioItem: FC<IPortfolioItem> = ({
@@ -14,6 +15,7 @@ const PortfolioItem: FC<IPortfolioItem> = ({
   name,
   description,
   technologies,
+  logo,
 }) => {
   return (
     <Grid
@@ -27,20 +29,18 @@ const PortfolioItem: FC<IPortfolioItem> = ({
       borderRadius={2}
       bgcolor="rgba(135, 145, 154, 0.4)"
     >
-      <Avatar
-        alt="MGH transport"
-        src={image}
-        variant="rounded"
-        style={{ width: "100%", height: "fit-content" }}
-      />
+      {image && (
+        <Avatar
+          alt="MGH transport"
+          src={image}
+          variant="rounded"
+          style={{ width: "100%", height: "fit-content" }}
+        />
+      )}
+      {logo}
       <Typography paddingY={2}>{name}</Typography>
       <Typography paddingY={2}>{technologies}</Typography>
-      <Typography>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit
-        ratione laboriosam quibusdam sint ipsam quo. Maxime enim perferendis
-        vero libero, veniam assumenda corporis porro laboriosam voluptas neque!
-        Iste, autem sequi!
-      </Typography>
+      <Typography>{description}</Typography>
     </Grid>
   );
 };

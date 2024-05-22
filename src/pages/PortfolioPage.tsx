@@ -11,6 +11,7 @@ import { minWidth } from "../constants/styleConstants";
 import PortfolioItem from "../components/PortfolioItem/PortfolioItem";
 import mgh from "../images/mgh.jpg";
 import ach from "../images/ach.jpg";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const portFolioItems = [
   {
@@ -41,6 +42,14 @@ const portFolioItems = [
     describsion:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit ratione laboriosam quibusdam sint ipsam quo. Maxime enim perferendis vero libero, veniam assumenda corporis porro laboriosam voluptas neque! Iste, autem sequi!",
   },
+  {
+    logo: (
+      <GitHubIcon
+        style={{ width: "100%", padding: "3px 0", border: "1px solid #FFF" }}
+      />
+    ),
+    name: "My github",
+  },
 ];
 
 const PortfolioPage = () => {
@@ -64,6 +73,7 @@ const PortfolioPage = () => {
           technologies={item.technologies}
           description={item.describsion}
           key={index}
+          logo={item.logo}
         />
       ))}
     </Grid>

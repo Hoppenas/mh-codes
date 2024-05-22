@@ -16,14 +16,14 @@ const FollowMeBar: FC = () => {
       gap={1}
       margin={1}
     >
-      <IconButton
+      {/* <IconButton
         color="inherit"
         sx={{ padding: 0, cursor: "pointer" }}
         href={githubLink}
         target="_blank"
-      >
-        <GitHubIcon />
-      </IconButton>
+      > */}
+      <GitHubIcon />
+      {/* </IconButton> */}
       <IconButton
         color="inherit"
         sx={{ padding: 0, cursor: "pointer" }}
