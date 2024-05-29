@@ -2,6 +2,7 @@ import { Grid, Typography, useMediaQuery, Box, Avatar } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { minWidth } from "../constants/styleConstants";
 import mhphoto from "../images/MHphoto.jpg";
+import CustomizedTimeline from "../components/CustomizedTimeline/CustomizedTimeline";
 
 const AboutMePage = () => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const AboutMePage = () => {
       maxWidth="60%"
       margin="auto"
     >
-      <Box
+      {/* <Box
         padding={2}
         bgcolor="rgba(135, 145, 154, 0.4)"
         display="flex"
@@ -41,7 +42,7 @@ const AboutMePage = () => {
           my logistics career, it didn't take long to become a fully fledged
           team player of the Neurotechnology front end team.
         </Typography>
-      </Box>
+      </Box> */}
       {/* <Typography>
         My everyday tools are React, Typescript, Figma, GIT, REST APIs and daily
         communication with my and other team's developers, UI/UX designers and
@@ -68,6 +69,7 @@ const AboutMePage = () => {
         go... Do you want to build a snowman?* I would surely do! *Lyrics from
         movie Frozen.
       </Typography> */}
+      <CustomizedTimeline />
     </Grid>
   );
 };
