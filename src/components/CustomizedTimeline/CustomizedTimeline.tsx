@@ -1,11 +1,12 @@
 import * as React from "react";
-import { Timeline } from "@mui/lab";
-import TimelineItem from "@mui/lab/TimelineItem";
-import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import TimelineConnector from "@mui/lab/TimelineConnector";
-import TimelineContent from "@mui/lab/TimelineContent";
-import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
-import TimelineDot from "@mui/lab/TimelineDot";
+import {
+  TimelineDot,
+  TimelineContent,
+  TimelineConnector,
+  TimelineSeparator,
+  TimelineItem,
+  Timeline,
+} from "@mui/lab";
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import LocalAirportIcon from "@mui/icons-material/LocalAirport";
 import FingerprintIcon from "@mui/icons-material/Fingerprint";
@@ -24,7 +25,7 @@ const timeLineItems = [
     description: "",
     date: "2006-2011",
     isEducation: true,
-    icon: <HistoryEduIcon />,
+    icon: <HistoryEduIcon sx={{ color: "black" }} />,
   },
   {
     name: "Code Academy",
@@ -32,7 +33,7 @@ const timeLineItems = [
     description: "HTML / CSS / JS / Git",
     date: "2020.06-09",
     isEducation: true,
-    icon: <SchoolIcon />,
+    icon: <SchoolIcon sx={{ color: "black" }} />,
   },
   {
     name: "Devbridge Sourcery Academy",
@@ -41,7 +42,7 @@ const timeLineItems = [
       "Agile / Git / HTML / SCSS / BEM / React / JS / Accessibility / Webpack ",
     date: "2020.11-2021.01",
     isEducation: true,
-    icon: <DeveloperBoardIcon />,
+    icon: <DeveloperBoardIcon sx={{ color: "black" }} />,
   },
   {
     name: "KAYAK WCC Academy",
@@ -50,7 +51,7 @@ const timeLineItems = [
       "Javascript / CSS / React / Redux / Node.js / GraphQL / Testing / Data Bases",
     date: "2021.03-06",
     isEducation: true,
-    icon: <TravelExploreIcon />,
+    icon: <TravelExploreIcon sx={{ color: "black" }} />,
   },
   {
     name: "Kilo Health Academy",
@@ -59,7 +60,7 @@ const timeLineItems = [
       "TypeScript / React / CSS / Firebase / Animation / Debugging / Authentification / Localization / Mobile design",
     date: "2021.06-09",
     isEducation: true,
-    icon: <HealthAndSafetyIcon />,
+    icon: <HealthAndSafetyIcon sx={{ color: "black" }} />,
   },
   {
     name: "Neurotechnology",
@@ -75,7 +76,7 @@ const timeLineItems = [
     ],
     date: "2021 - Present",
     isEducation: false,
-    icon: <FingerprintIcon />,
+    icon: <FingerprintIcon sx={{ color: "black" }} />,
   },
   {
     name: "Hellmann Worldwide Logistics UAB",
@@ -89,7 +90,7 @@ const timeLineItems = [
     ],
     date: "2013 - 2021",
     isEducation: false,
-    icon: <LocalAirportIcon />,
+    icon: <LocalAirportIcon sx={{ color: "black" }} />,
   },
   {
     name: "Abipa logistics",
@@ -97,7 +98,7 @@ const timeLineItems = [
     description: "",
     date: "2008-2013",
     isEducation: false,
-    icon: <FlightTakeoffIcon />,
+    icon: <FlightTakeoffIcon sx={{ color: "black" }} />,
   },
 ];
 
@@ -106,21 +107,24 @@ export default function CustomizedTimeline() {
     <Timeline position="alternate">
       {timeLineItems.map((item, index) => (
         <TimelineItem>
-          <TimelineOppositeContent
+          {/* <TimelineOppositeContent
             sx={{ m: "auto 0" }}
             align="right"
-            variant="body2"
-            // color="text.secondary"
+            variant="h4"
+            color="error"
           >
             {item.date}
-          </TimelineOppositeContent>
+          </TimelineOppositeContent> */}
           <TimelineSeparator>
             <TimelineConnector />
             <TimelineDot>{item.icon}</TimelineDot>
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent sx={{ py: "20px", px: 2 }}>
-            <Typography variant="h6" component="span">
+            <Typography variant="h5" color="rgB(228, 86, 62)">
+              {item.date}
+            </Typography>
+            <Typography variant="h6" component="span" color="#008577">
               {item.name}
             </Typography>
             <Typography>{item.title}</Typography>

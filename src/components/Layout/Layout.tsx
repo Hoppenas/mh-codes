@@ -28,7 +28,8 @@ const Layout = ({}: Props) => {
         <div
           className="background"
           style={{
-            backgroundImage: `url(${background})`,
+            // backgroundImage: `url(${background})`,
+            background: "black",
           }}
         />
         <Box
