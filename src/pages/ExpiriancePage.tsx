@@ -11,10 +11,10 @@ const AboutMePage = () => {
   return (
     <Grid
       container
-      justifyContent="center"
-      alignContent="center"
+      // justifyContent="center"
+      // alignContent="center"
       height="100%"
-      zIndex={1}
+      // zIndex={1}
       maxWidth="60%"
       margin="auto"
     >

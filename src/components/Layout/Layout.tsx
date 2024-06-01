@@ -41,8 +41,8 @@ const Layout = ({}: Props) => {
           }}
         >
           <Outlet />
-          <Footer />
         </Box>
+        <Footer />
       </Box>
     </Box>
   );

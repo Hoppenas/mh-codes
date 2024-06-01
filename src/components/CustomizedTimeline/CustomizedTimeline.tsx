@@ -6,13 +6,16 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
+import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
+import LocalAirportIcon from "@mui/icons-material/LocalAirport";
+import FingerprintIcon from "@mui/icons-material/Fingerprint";
+import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
+import TravelExploreIcon from "@mui/icons-material/TravelExplore";
+import DeveloperBoardIcon from "@mui/icons-material/DeveloperBoard";
+import SchoolIcon from "@mui/icons-material/School";
+import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
 
-import FastfoodIcon from "@mui/icons-material/Fastfood";
-import LaptopMacIcon from "@mui/icons-material/LaptopMac";
-import HotelIcon from "@mui/icons-material/Hotel";
-import RepeatIcon from "@mui/icons-material/Repeat";
-
-import { Grid, Typography, IconButton } from "@mui/material";
+import { Typography } from "@mui/material";
 
 const timeLineItems = [
   {
@@ -21,6 +24,7 @@ const timeLineItems = [
     description: "",
     date: "2006-2011",
     isEducation: true,
+    icon: <HistoryEduIcon />,
   },
   {
     name: "Code Academy",
@@ -28,6 +32,7 @@ const timeLineItems = [
     description: "HTML / CSS / JS / Git",
     date: "2020.06-09",
     isEducation: true,
+    icon: <SchoolIcon />,
   },
   {
     name: "Devbridge Sourcery Academy",
@@ -36,6 +41,7 @@ const timeLineItems = [
       "Agile / Git / HTML / SCSS / BEM / React / JS / Accessibility / Webpack ",
     date: "2020.11-2021.01",
     isEducation: true,
+    icon: <DeveloperBoardIcon />,
   },
   {
     name: "KAYAK WCC Academy",
@@ -44,13 +50,7 @@ const timeLineItems = [
       "Javascript / CSS / React / Redux / Node.js / GraphQL / Testing / Data Bases",
     date: "2021.03-06",
     isEducation: true,
-  },
-  {
-    name: "",
-    title: "",
-    description: "",
-    date: "",
-    isEducation: true,
+    icon: <TravelExploreIcon />,
   },
   {
     name: "Kilo Health Academy",
@@ -59,6 +59,7 @@ const timeLineItems = [
       "TypeScript / React / CSS / Firebase / Animation / Debugging / Authentification / Localization / Mobile design",
     date: "2021.06-09",
     isEducation: true,
+    icon: <HealthAndSafetyIcon />,
   },
   {
     name: "Neurotechnology",
@@ -74,6 +75,7 @@ const timeLineItems = [
     ],
     date: "2021 - Present",
     isEducation: false,
+    icon: <FingerprintIcon />,
   },
   {
     name: "Hellmann Worldwide Logistics UAB",
@@ -87,6 +89,7 @@ const timeLineItems = [
     ],
     date: "2013 - 2021",
     isEducation: false,
+    icon: <LocalAirportIcon />,
   },
   {
     name: "Abipa logistics",
@@ -94,6 +97,7 @@ const timeLineItems = [
     description: "",
     date: "2008-2013",
     isEducation: false,
+    icon: <FlightTakeoffIcon />,
   },
 ];
 
@@ -112,12 +116,10 @@ export default function CustomizedTimeline() {
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />
-            <TimelineDot>
-              <FastfoodIcon />
-            </TimelineDot>
+            <TimelineDot>{item.icon}</TimelineDot>
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent sx={{ py: "12px", px: 2 }}>
+          <TimelineContent sx={{ py: "20px", px: 2 }}>
             <Typography variant="h6" component="span">
               {item.name}
             </Typography>
@@ -126,58 +128,6 @@ export default function CustomizedTimeline() {
           </TimelineContent>
         </TimelineItem>
       ))}
-      {/* <TimelineItem>
-        <TimelineOppositeContent
-          sx={{ m: "auto 0" }}
-          variant="body2"
-          color="text.secondary"
-        >
-          10:00 am
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineConnector />
-          <TimelineDot color="primary">
-            <LaptopMacIcon />
-          </TimelineDot>
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent sx={{ py: "12px", px: 2 }}>
-          <Typography variant="h6" component="span">
-            Code
-          </Typography>
-          <Typography>Because it&apos;s awesome!</Typography>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineConnector />
-          <TimelineDot color="primary" variant="outlined">
-            <HotelIcon />
-          </TimelineDot>
-          <TimelineConnector sx={{ bgcolor: "secondary.main" }} />
-        </TimelineSeparator>
-        <TimelineContent sx={{ py: "12px", px: 2 }}>
-          <Typography variant="h6" component="span">
-            Sleep
-          </Typography>
-          <Typography>Because you need rest</Typography>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineConnector sx={{ bgcolor: "secondary.main" }} />
-          <TimelineDot color="secondary">
-            <RepeatIcon />
-          </TimelineDot>
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent sx={{ py: "12px", px: 2 }}>
-          <Typography variant="h6" component="span">
-            Repeat
-          </Typography>
-          <Typography>Because this is the life you love!</Typography>
-        </TimelineContent>
-      </TimelineItem> */}
     </Timeline>
   );
 }
