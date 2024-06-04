@@ -25,7 +25,7 @@ const timeLineItems = [
     description: "",
     date: "2006-2011",
     isEducation: true,
-    icon: <HistoryEduIcon sx={{ color: "black" }} />,
+    icon: <HistoryEduIcon sx={{ color: "black" }} fontSize="large" />,
   },
   {
     name: "Code Academy",
@@ -33,7 +33,7 @@ const timeLineItems = [
     description: "HTML / CSS / JS / Git",
     date: "2020.06-09",
     isEducation: true,
-    icon: <SchoolIcon sx={{ color: "black" }} />,
+    icon: <SchoolIcon sx={{ color: "black" }} fontSize="large" />,
   },
   {
     name: "Devbridge Sourcery Academy",
@@ -42,7 +42,7 @@ const timeLineItems = [
       "Agile / Git / HTML / SCSS / BEM / React / JS / Accessibility / Webpack ",
     date: "2020.11-2021.01",
     isEducation: true,
-    icon: <DeveloperBoardIcon sx={{ color: "black" }} />,
+    icon: <DeveloperBoardIcon sx={{ color: "black" }} fontSize="large" />,
   },
   {
     name: "KAYAK WCC Academy",
@@ -51,7 +51,7 @@ const timeLineItems = [
       "Javascript / CSS / React / Redux / Node.js / GraphQL / Testing / Data Bases",
     date: "2021.03-06",
     isEducation: true,
-    icon: <TravelExploreIcon sx={{ color: "black" }} />,
+    icon: <TravelExploreIcon sx={{ color: "black" }} fontSize="large" />,
   },
   {
     name: "Kilo Health Academy",
@@ -60,7 +60,7 @@ const timeLineItems = [
       "TypeScript / React / CSS / Firebase / Animation / Debugging / Authentification / Localization / Mobile design",
     date: "2021.06-09",
     isEducation: true,
-    icon: <HealthAndSafetyIcon sx={{ color: "black" }} />,
+    icon: <HealthAndSafetyIcon sx={{ color: "black" }} fontSize="large" />,
   },
   {
     name: "Neurotechnology",
@@ -76,7 +76,7 @@ const timeLineItems = [
     ],
     date: "2021 - Present",
     isEducation: false,
-    icon: <FingerprintIcon sx={{ color: "black" }} />,
+    icon: <FingerprintIcon sx={{ color: "black" }} fontSize="large" />,
   },
   {
     name: "Hellmann Worldwide Logistics UAB",
@@ -90,7 +90,7 @@ const timeLineItems = [
     ],
     date: "2013 - 2021",
     isEducation: false,
-    icon: <LocalAirportIcon sx={{ color: "black" }} />,
+    icon: <LocalAirportIcon sx={{ color: "black" }} fontSize="large" />,
   },
   {
     name: "Abipa logistics",
@@ -98,7 +98,7 @@ const timeLineItems = [
     description: "",
     date: "2008-2013",
     isEducation: false,
-    icon: <FlightTakeoffIcon sx={{ color: "black" }} />,
+    icon: <FlightTakeoffIcon sx={{ color: "black" }} fontSize="large" />,
   },
 ];
 
@@ -106,25 +106,32 @@ export default function CustomizedTimeline() {
   return (
     <Timeline position="alternate">
       {timeLineItems.map((item, index) => (
-        <TimelineItem>
-          {/* <TimelineOppositeContent
-            sx={{ m: "auto 0" }}
-            align="right"
-            variant="h4"
-            color="error"
-          >
-            {item.date}
-          </TimelineOppositeContent> */}
+        <TimelineItem key={index}>
           <TimelineSeparator>
             <TimelineConnector />
-            <TimelineDot>{item.icon}</TimelineDot>
+            <TimelineDot
+              sx={{
+                borderRadius: 2,
+                height: "3rem",
+                width: "3rem",
+                background: "#FFF",
+                border: 1,
+              }}
+            >
+              {item.icon}
+            </TimelineDot>
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent sx={{ py: "20px", px: 2 }}>
-            <Typography variant="h5" color="rgB(228, 86, 62)">
+            <Typography
+              fontSize="2rem"
+              color="rgB(228, 86, 62)"
+              fontWeight="900"
+              letterSpacing="0.1rem"
+            >
               {item.date}
             </Typography>
-            <Typography variant="h6" component="span" color="#008577">
+            <Typography fontSize="1.4rem" fontWeight="700" color="#008577">
               {item.name}
             </Typography>
             <Typography>{item.title}</Typography>
