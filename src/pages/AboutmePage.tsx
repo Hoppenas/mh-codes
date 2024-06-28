@@ -18,31 +18,39 @@ const AboutMePage = () => {
       maxWidth="60%"
       margin="auto"
     >
-      {/* <Box
+      <Box
         padding={2}
         bgcolor="rgba(135, 145, 154, 0.4)"
         display="flex"
         flexDirection="row"
         gap={3}
       >
-        <Avatar
+        {/* <Avatar
           alt="Martynas Hoppenas"
           src={mhphoto}
           variant="rounded"
           sx={{ width: 200, height: 300 }}
-        />
-        <Typography>
-          Please accept this letter as an expression of my interest in the
-          Front-end Engineer position. For the last 13 years I have been working
-          in the aviation business. But during the pandemic lockdown I have
-          decided to make a career change and focus on the IT business. To
-          kickstart my IT career, I have successfully finished the Code Academy
-          , Devbridge, KAYAK , Kilo Health front end academies. With all the
-          knowledge I gained studying and communication skills developed during
-          my logistics career, it didn't take long to become a fully fledged
-          team player of the Neurotechnology front end team.
-        </Typography>
-      </Box> */}
+        /> */}
+        <Grid container>
+          <Grid xs={6} border={1}>
+            <Typography>ABOUT ME</Typography>
+          </Grid>
+          <Grid xs={12}>
+            <Typography>
+              Please accept this letter as an expression of my interest in the
+              Front-end Engineer position. For the last 13 years I have been
+              working in the aviation business. But during the pandemic lockdown
+              I have decided to make a career change and focus on the IT
+              business. To kickstart my IT career, I have successfully finished
+              the Code Academy , Devbridge, KAYAK , Kilo Health front end
+              academies. With all the knowledge I gained studying and
+              communication skills developed during my logistics career, it
+              didn't take long to become a fully fledged team player of the
+              Neurotechnology front end team.
+            </Typography>
+          </Grid>
+        </Grid>
+      </Box>
       {/* <Typography>
         My everyday tools are React, Typescript, Figma, GIT, REST APIs and daily
         communication with my and other team's developers, UI/UX designers and
@@ -69,7 +77,6 @@ const AboutMePage = () => {
         go... Do you want to build a snowman?* I would surely do! *Lyrics from
         movie Frozen.
       </Typography> */}
-      <CustomizedTimeline />
     </Grid>
   );
 };

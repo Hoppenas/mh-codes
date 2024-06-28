@@ -13,8 +13,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="aboutMe" element={<AboutMePage />} />
+          <Route index element={<AboutMePage />} />
+          {/* <Route path="aboutMe" element={<AboutMePage />} /> */}
           <Route path="expirience" element={<ExpiriencePage />} />
           <Route path="portfolio" element={<PortfolioPage />} />
           <Route path="setup" element={<SetupPage />} />

@@ -25,8 +25,7 @@ interface Props {
 const drawerWidth = 240;
 
 const navItems = [
-  { name: "Home", route: "/" },
-  { name: "About me", route: "/aboutMe" },
+  { name: "About me", route: "/" },
   { name: "Expirience", route: "/expirience" },
   { name: "Portfolio", route: "/portfolio" },
   // { name: "Setup", route: "/setup" },
