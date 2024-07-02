@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 
 interface ITextWithHeaderContainer {
   header: string;
@@ -13,8 +13,8 @@ const TextWithHeaderContainer: FC<ITextWithHeaderContainer> = ({
   fullwith,
 }) => {
   return (
-    <Grid container margin={1}>
-      <Grid item container xs={12} justifyContent="flex-end">
+    <Grid margin={1} display="flex" flexDirection="column">
+      <Grid container justifyContent="flex-end" style={{ flexShrink: 0 }}>
         <Grid item xs={fullwith ? 12 : 6}>
           <Typography
             bgcolor="#FFF"
@@ -28,7 +28,7 @@ const TextWithHeaderContainer: FC<ITextWithHeaderContainer> = ({
           </Typography>
         </Grid>
       </Grid>
-      <Grid item xs={12} border={2}>
+      <Grid item flexGrow={1} border={1}>
         <Typography padding={2}>{text}</Typography>
       </Grid>
     </Grid>
