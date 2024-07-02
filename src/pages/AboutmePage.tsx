@@ -2,8 +2,44 @@ import { Grid, Typography, useMediaQuery, Box, Avatar } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { minWidth } from "../constants/styleConstants";
 import mhphoto from "../images/MHphoto.jpg";
-import CustomizedTimeline from "../components/CustomizedTimeline/CustomizedTimeline";
 import TextWithHeaderContainer from "../components/TextWithHeaderContainer/TextWithHeaderContainer";
+import Draggable from "react-draggable";
+import DraggableItem from "../components/DraggableItem/DraggableItem";
+import jsLogo from "../images/logo/javascript.svg";
+import muiLogo from "../images/logo/mui.svg";
+import reactLogo from "../images/logo/react.svg";
+import sassLogo from "../images/logo/sass.svg";
+import tsLogo from "../images/logo/ts.svg";
+import zustandLogo from "../images/logo/zustand.svg";
+
+// React/Redux/Styled Components/Typescript/MUI/Zustand/
+
+const techStackList = [
+  {
+    name: "Javascript",
+    logo: jsLogo,
+  },
+  {
+    name: "MUI",
+    logo: muiLogo,
+  },
+  {
+    name: "React",
+    logo: reactLogo,
+  },
+  {
+    name: "Sass",
+    logo: sassLogo,
+  },
+  {
+    name: "Typescript",
+    logo: tsLogo,
+  },
+  {
+    name: "Zustand",
+    logo: zustandLogo,
+  },
+];
 
 const testText = {
   header: "Test 1",
@@ -53,6 +89,18 @@ const AboutMePage = () => {
           </Grid>
         </Grid>
       </Grid>
+      {/* <Draggable>
+        <Box width="100px" height="100px" border="1px solid red" />
+      </Draggable>
+      <Draggable>
+        <Box width="100px" height="100px" border="1px solid green" />
+      </Draggable>
+      <Draggable>
+        <Box width="100px" height="100px" border="1px solid Blue" />
+      </Draggable> */}
+      {techStackList.map((item) => (
+        <DraggableItem logo={item.logo} name={item.name} />
+      ))}
     </Grid>
   );
 };

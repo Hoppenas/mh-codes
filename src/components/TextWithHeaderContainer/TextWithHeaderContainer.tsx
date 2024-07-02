@@ -28,8 +28,10 @@ const TextWithHeaderContainer: FC<ITextWithHeaderContainer> = ({
           </Typography>
         </Grid>
       </Grid>
-      <Grid item flexGrow={1} border={1}>
-        <Typography padding={2}>{text}</Typography>
+      <Grid item flexGrow={1} border={1} alignContent="center">
+        <Typography padding={2} textAlign="center">
+          {text}
+        </Typography>
       </Grid>
     </Grid>
   );
