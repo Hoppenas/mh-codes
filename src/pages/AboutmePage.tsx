@@ -89,18 +89,15 @@ const AboutMePage = () => {
           </Grid>
         </Grid>
       </Grid>
-      {/* <Draggable>
-        <Box width="100px" height="100px" border="1px solid red" />
-      </Draggable>
-      <Draggable>
-        <Box width="100px" height="100px" border="1px solid green" />
-      </Draggable>
-      <Draggable>
-        <Box width="100px" height="100px" border="1px solid Blue" />
-      </Draggable> */}
-      {techStackList.map((item) => (
-        <DraggableItem logo={item.logo} name={item.name} />
-      ))}
+      <Grid item container xs={12}>
+        <TextWithHeaderContainer
+          header="Move arround my tech stack"
+          text={techStackList.map((item) => (
+            <DraggableItem logo={item.logo} name={item.name} />
+          ))}
+          fullwith={true}
+        />
+      </Grid>
     </Grid>
   );
 };

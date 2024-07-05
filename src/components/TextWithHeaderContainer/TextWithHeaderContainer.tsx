@@ -1,9 +1,9 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 
 interface ITextWithHeaderContainer {
   header: string;
-  text: string;
+  text: string | ReactNode;
   fullwith: boolean;
 }
 

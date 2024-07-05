@@ -1,8 +1,6 @@
-import { FC, ReactNode } from "react";
-import { Grid, Typography, useMediaQuery, Box, Avatar } from "@mui/material";
-import Draggable from "react-draggable";
-
-// React/Redux/Styled Components/Typescript/MUI/Zustand/
+import { FC, useState } from "react";
+import { Typography, Box } from "@mui/material";
+import DraggableCore from "react-draggable";
 
 interface IDraggableItem {
   logo: string;
@@ -10,13 +8,21 @@ interface IDraggableItem {
 }
 
 const DraggableItem: FC<IDraggableItem> = ({ logo, name }) => {
+  const [isSelected, setIsSelected] = useState(false);
   return (
-    <Draggable>
-      <Box width="100px" height="100px" border="1px solid Blue">
-        <img src={logo} alt={`${name} logo`} />
+    <DraggableCore
+      onStart={() => setIsSelected(true)}
+      onStop={() => setIsSelected(false)}
+    >
+      <Box width="100px" height="100px" padding={2}>
+        <img
+          src={logo}
+          alt={`${name} logo`}
+          style={{ cursor: isSelected ? "move" : "grab" }}
+        />
         <Typography>{name}</Typography>
       </Box>
-    </Draggable>
+    </DraggableCore>
   );
 };
 
