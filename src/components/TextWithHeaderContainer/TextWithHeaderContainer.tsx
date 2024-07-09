@@ -3,7 +3,8 @@ import { Box, Grid, Typography } from "@mui/material";
 
 interface ITextWithHeaderContainer {
   header: string;
-  text: string | ReactNode;
+  text?: string | ReactNode;
+  items?: ReactNode;
   fullwith: boolean;
 }
 
@@ -11,9 +12,17 @@ const TextWithHeaderContainer: FC<ITextWithHeaderContainer> = ({
   header,
   text,
   fullwith,
+  items,
 }) => {
   return (
-    <Grid margin={1} display="flex" flexDirection="column">
+    <Grid
+      item
+      container
+      xs={12}
+      margin={1}
+      display="flex"
+      flexDirection="column"
+    >
       <Grid container justifyContent="flex-end" style={{ flexShrink: 0 }}>
         <Grid item xs={fullwith ? 12 : 6}>
           <Typography
@@ -28,10 +37,21 @@ const TextWithHeaderContainer: FC<ITextWithHeaderContainer> = ({
           </Typography>
         </Grid>
       </Grid>
-      <Grid item flexGrow={1} border={1} alignContent="center">
-        <Typography padding={2} textAlign="center">
-          {text}
-        </Typography>
+      <Grid
+        item
+        container
+        flexGrow={1}
+        border={1}
+        alignContent="center"
+        direction="row"
+        justifyContent="space-between"
+      >
+        {text && (
+          <Typography padding={2} textAlign="center">
+            {text}
+          </Typography>
+        )}
+        {items}
       </Grid>
     </Grid>
   );

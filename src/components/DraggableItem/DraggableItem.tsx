@@ -14,7 +14,7 @@ const DraggableItem: FC<IDraggableItem> = ({ logo, name }) => {
       onStart={() => setIsSelected(true)}
       onStop={() => setIsSelected(false)}
     >
-      <Box width="100px" height="100px" padding={2}>
+      <Box width="100px" margin={2}>
         <img
           src={logo}
           alt={`${name} logo`}

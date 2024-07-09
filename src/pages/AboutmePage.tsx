@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { minWidth } from "../constants/styleConstants";
 import mhphoto from "../images/MHphoto.jpg";
 import TextWithHeaderContainer from "../components/TextWithHeaderContainer/TextWithHeaderContainer";
-import Draggable from "react-draggable";
 import DraggableItem from "../components/DraggableItem/DraggableItem";
 import jsLogo from "../images/logo/javascript.svg";
 import muiLogo from "../images/logo/mui.svg";
@@ -11,8 +10,6 @@ import reactLogo from "../images/logo/react.svg";
 import sassLogo from "../images/logo/sass.svg";
 import tsLogo from "../images/logo/ts.svg";
 import zustandLogo from "../images/logo/zustand.svg";
-
-// React/Redux/Styled Components/Typescript/MUI/Zustand/
 
 const techStackList = [
   {
@@ -58,10 +55,11 @@ const AboutMePage = () => {
       alignContent="center"
       height="100%"
       zIndex={1}
-      maxWidth="60%"
+      maxWidth="1024px"
       margin="auto"
+      marginTop={20}
     >
-      <Grid container>
+      <Grid container border={1}>
         <TextWithHeaderContainer
           fullwith={false}
           header={testText.header}
@@ -71,8 +69,9 @@ const AboutMePage = () => {
           <Grid item container xs={6}>
             <TextWithHeaderContainer
               fullwith={true}
-              header={testText.header}
-              text={testText.text}
+              header="test2"
+              // text={testText.text}
+              items={<img src={mhphoto} width="200px" alt="MH" />}
             />
             <TextWithHeaderContainer
               fullwith={true}
@@ -89,15 +88,15 @@ const AboutMePage = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item container xs={12}>
-        <TextWithHeaderContainer
-          header="Move arround my tech stack"
-          text={techStackList.map((item) => (
-            <DraggableItem logo={item.logo} name={item.name} />
-          ))}
-          fullwith={true}
-        />
-      </Grid>
+      {/* <Grid item container width="100%"> */}
+      <TextWithHeaderContainer
+        header="Move arround my tech stack"
+        items={techStackList.map((item) => (
+          <DraggableItem logo={item.logo} name={item.name} />
+        ))}
+        fullwith={true}
+      />
+      {/* </Grid> */}
     </Grid>
   );
 };
