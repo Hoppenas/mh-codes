@@ -10,6 +10,7 @@ import reactLogo from "../images/logo/react.svg";
 import sassLogo from "../images/logo/sass.svg";
 import tsLogo from "../images/logo/ts.svg";
 import zustandLogo from "../images/logo/zustand.svg";
+import ContactList from "../components/ContactList/ContactList";
 
 const techStackList = [
   {
@@ -49,17 +50,22 @@ const AboutMePage = () => {
   const matches = useMediaQuery(`(min-width:${minWidth})`);
 
   return (
-    <Grid
-      container
-      justifyContent="center"
-      alignContent="center"
-      height="100%"
-      zIndex={1}
-      maxWidth="1024px"
-      margin="auto"
-      marginTop={20}
-    >
-      <Grid container border={1}>
+    <Grid container zIndex={1} maxWidth="1024px" margin="auto">
+      <Grid container>
+        <Grid item container direction="row" xs={12} marginX={1} marginTop={1}>
+          <Grid item container xs={4}>
+            <img src={mhphoto} width="250px" alt="MH" />
+          </Grid>
+          <Grid item direction="column" xs={8}>
+            <Typography width="fit-content" variant="h3">
+              MARTYNAS HOPPENAS
+            </Typography>
+            <Typography width="fit-content" variant="h5">
+              Frontend developer
+            </Typography>
+            <ContactList />
+          </Grid>
+        </Grid>
         <TextWithHeaderContainer
           fullwith={false}
           header={testText.header}
@@ -70,8 +76,8 @@ const AboutMePage = () => {
             <TextWithHeaderContainer
               fullwith={true}
               header="test2"
-              // text={testText.text}
-              items={<img src={mhphoto} width="200px" alt="MH" />}
+              text={testText.text}
+              // items={<img src={mhphoto} width="200px" alt="MH" />}
             />
             <TextWithHeaderContainer
               fullwith={true}

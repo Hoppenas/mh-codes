@@ -39,6 +39,7 @@ const Layout = ({}: Props) => {
           sx={{
             width: "100%",
             display: "flex",
+            // paddingTop: "50px",
           }}
         >
           <Outlet />
