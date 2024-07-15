@@ -1,11 +1,9 @@
-import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
+import { Grid, useMediaQuery } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { minWidth } from "../constants/styleConstants";
+import ContactList from "../components/ContactList/ContactList";
 
 const ContactPage = () => {
-  const navigate = useNavigate();
-  const matches = useMediaQuery(`(min-width:${minWidth})`);
-
   return (
     <Grid
       container
@@ -14,7 +12,7 @@ const ContactPage = () => {
       height="100%"
       zIndex={1}
     >
-      <Typography>Contacts</Typography>
+      <ContactList />
     </Grid>
   );
 };

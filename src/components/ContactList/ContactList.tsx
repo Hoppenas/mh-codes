@@ -23,7 +23,7 @@ const ContactList = () => {
             padding: 0,
             cursor: "pointer",
           }}
-          href="www.google.com"
+          href="https://github.com/hoppenas"
           target="_blank"
         >
           <GitHubIcon />
@@ -36,7 +36,7 @@ const ContactList = () => {
         <IconButton
           color="inherit"
           sx={{ padding: 0, cursor: "pointer" }}
-          href="www.google.com"
+          href="https://www.linkedin.com/in/martynas-hoppenas"
           target="_blank"
         >
           <LinkedInIcon />
