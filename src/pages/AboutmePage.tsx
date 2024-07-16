@@ -45,6 +45,9 @@ const testText = {
   text: "LoremCulpa occaecat commodo aliquip elit fugiat quis reprehenderit nostrud eu culpa id tempor commodo aute. Laboris exercitation esse cillum et mollit minim mollit esse sit et Lorem mollit amet ea. Et sunt sunt consequat minim nulla officia adipisicing reprehenderit minim ut anim. Ut sunt tempor exercitation laborum enim et eu esse. Et officia veniam excepteur consectetur ut elit.",
 };
 
+const suvalkiUrl =
+  "https://www.politico.eu/article/suwalki-gap-russia-war-nato-lithuania-poland-border/";
+
 const AboutMePage = () => {
   const navigate = useNavigate();
   const matches = useMediaQuery(`(min-width:${minWidth})`);

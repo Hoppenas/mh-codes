@@ -6,6 +6,7 @@ import {
   TimelineSeparator,
   TimelineItem,
   Timeline,
+  timelineItemClasses,
 } from "@mui/lab";
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import LocalAirportIcon from "@mui/icons-material/LocalAirport";
@@ -16,7 +17,7 @@ import DeveloperBoardIcon from "@mui/icons-material/DeveloperBoard";
 import SchoolIcon from "@mui/icons-material/School";
 import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
 
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery, useTheme } from "@mui/material";
 
 const timeLineItems = [
   {
@@ -102,9 +103,21 @@ const timeLineItems = [
   },
 ];
 
+const positionLeftStyle = {
+  [`& .${timelineItemClasses.root}:before`]: {
+    flex: 0,
+    padding: 0,
+  },
+};
+
 export default function CustomizedTimeline() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("md"));
   return (
-    <Timeline position="alternate">
+    <Timeline
+      position={matches ? "alternate" : "right"}
+      sx={matches ? {} : positionLeftStyle}
+    >
       {timeLineItems.map((item, index) => (
         <TimelineItem key={index}>
           <TimelineSeparator>
@@ -125,7 +138,7 @@ export default function CustomizedTimeline() {
           <TimelineContent sx={{ py: "20px", px: 2 }}>
             <Typography
               fontSize="2rem"
-              color="rgB(228, 86, 62)"
+              color="rgb(228, 86, 62)"
               fontWeight="900"
               letterSpacing="0.1rem"
             >
@@ -135,7 +148,9 @@ export default function CustomizedTimeline() {
               {item.name}
             </Typography>
             <Typography>{item.title}</Typography>
-            <Typography>{item.description}</Typography>
+            <Typography fontSize={!matches ? "0.8rem" : "1rem"}>
+              {item.description}
+            </Typography>
           </TimelineContent>
         </TimelineItem>
       ))}

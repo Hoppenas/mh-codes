@@ -15,8 +15,9 @@ const AboutMePage = () => {
       // alignContent="center"
       height="100%"
       // zIndex={1}
-      maxWidth="60%"
-      margin="auto"
+      // width="fit-content"
+      maxWidth="1440px"
+      margin={matches ? "auto" : 0}
     >
       <CustomizedTimeline />
     </Grid>
