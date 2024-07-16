@@ -1,4 +1,4 @@
-import { Grid, Typography, useMediaQuery, Box, Avatar } from "@mui/material";
+import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { minWidth } from "../constants/styleConstants";
 import mhphoto from "../images/MHphoto.jpg";
@@ -39,18 +39,32 @@ const techStackList = [
   },
 ];
 
-const testText = {
-  header: "Test 1",
-  // text: "For the last 13 years I have been working in the aviation business. But during the pandemic lockdown I have decided to make a career change and focus on the IT business. To kickstart my IT career, I have successfully finished the Code Academy , Devbridge, KAYAK , Kilo Health front end academies. With all the knowledge I gained studying and communication skills developed during my logistics career, it didn't take long to become a fully fledged team player of the Neurotechnology front end team.",
-  text: "LoremCulpa occaecat commodo aliquip elit fugiat quis reprehenderit nostrud eu culpa id tempor commodo aute. Laboris exercitation esse cillum et mollit minim mollit esse sit et Lorem mollit amet ea. Et sunt sunt consequat minim nulla officia adipisicing reprehenderit minim ut anim. Ut sunt tempor exercitation laborum enim et eu esse. Et officia veniam excepteur consectetur ut elit.",
+const aboutMeInfo = {
+  aboutMe: {
+    header: "About me",
+    text: "With over a decade in airfreight, I've transitioned to IT, excelling in the Neurotechnology front end team. Proactive and patient, I bring expertise in aviation, government tenders, alongside self-motivation, mathematical prowess, and strategic thinking. My approach fosters a collaborative and enjoyable work environment. Also.. it is fun to be around me!",
+  },
+  howStarted: {
+    header: "How it started",
+    text: "LoremCulpa occaecat commodo aliquip elit fugiat quis reprehenderit nostrud eu culpa id tempor commodo aute. Laboris exercitation esse cillum et mollit minim mollit esse sit et Lorem mollit amet ea. Et sunt sunt consequat minim nulla officia adipisicing reprehenderit minim ut anim. Ut sunt tempor exercitation laborum enim et eu esse. Et officia veniam excepteur consectetur ut elit.",
+  },
+  howGoing: {
+    header: "How it's going",
+    text: "LoremCulpa occaecat commodo aliquip elit fugiat quis reprehenderit nostrud eu culpa id tempor commodo aute. Laboris exercitation esse cillum et mollit minim mollit esse sit et Lorem mollit amet ea. Et sunt sunt consequat minim nulla officia adipisicing reprehenderit minim ut anim. Ut sunt tempor exercitation laborum enim et eu esse. Et officia veniam excepteur consectetur ut elit.",
+  },
+  hobbies: {
+    header: "Hobbies",
+    text: "LoremCulpa occaecat commodo aliquip elit fugiat quis reprehenderit nostrud eu culpa id tempor commodo aute. Laboris exercitation esse cillum et mollit minim mollit esse sit et Lorem mollit amet ea. Et sunt sunt consequat minim nulla officia adipisicing reprehenderit minim ut anim. Ut sunt tempor exercitation laborum enim et eu esse. Et officia veniam excepteur consectetur ut elit.",
+  },
 };
 
 const suvalkiUrl =
   "https://www.politico.eu/article/suwalki-gap-russia-war-nato-lithuania-poland-border/";
 
 const AboutMePage = () => {
+  const theme = useTheme();
   const navigate = useNavigate();
-  const matches = useMediaQuery(`(min-width:${minWidth})`);
+  const matches = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
     <Grid container zIndex={1} maxWidth="1024px" margin="auto">
@@ -71,33 +85,31 @@ const AboutMePage = () => {
         </Grid>
         <TextWithHeaderContainer
           fullwith={false}
-          header={testText.header}
-          text={testText.text}
+          header={aboutMeInfo.aboutMe.header}
+          text={aboutMeInfo.aboutMe.text}
         />
         <Grid item container>
           <Grid item container xs={6}>
             <TextWithHeaderContainer
               fullwith={true}
-              header="test2"
-              text={testText.text}
-              // items={<img src={mhphoto} width="200px" alt="MH" />}
+              header={aboutMeInfo.howStarted.header}
+              text={aboutMeInfo.howStarted.text}
             />
             <TextWithHeaderContainer
               fullwith={true}
-              header={testText.header}
-              text={testText.text}
+              header={aboutMeInfo.howGoing.header}
+              text={aboutMeInfo.howGoing.text}
             />
           </Grid>
           <Grid item container xs={6}>
             <TextWithHeaderContainer
               fullwith={true}
-              header={testText.header}
-              text={testText.text}
+              header={aboutMeInfo.hobbies.header}
+              text={aboutMeInfo.hobbies.text}
             />
           </Grid>
         </Grid>
       </Grid>
-      {/* <Grid item container width="100%"> */}
       <TextWithHeaderContainer
         header="Move arround my tech stack"
         items={techStackList.map((item) => (
@@ -105,7 +117,6 @@ const AboutMePage = () => {
         ))}
         fullwith={true}
       />
-      {/* </Grid> */}
     </Grid>
   );
 };
