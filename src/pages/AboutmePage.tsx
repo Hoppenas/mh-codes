@@ -46,11 +46,11 @@ const aboutMeInfo = {
   },
   howStarted: {
     header: "How it started",
-    text: "LoremCulpa occaecat commodo aliquip elit fugiat quis reprehenderit nostrud eu culpa id tempor commodo aute. Laboris exercitation esse cillum et mollit minim mollit esse sit et Lorem mollit amet ea. Et sunt sunt consequat minim nulla officia adipisicing reprehenderit minim ut anim. Ut sunt tempor exercitation laborum enim et eu esse. Et officia veniam excepteur consectetur ut elit.",
+    text: "I embarked on my frontend developer career after completing a series of intensive training programs at Code Academy, Devbridge Frontend Academy, Kayak Academy, and Kilo Health Academy. These academies provided me with a solid foundation in web development and honed my skills in creating engaging user interfaces. Shortly after, I landed my first job as a frontend developer, ready to apply my knowledge in a real-world setting. And remember, I chose frontend development because, unlike the back end, you can actually see what you're doing—no more 'invisible' bugs!",
   },
   howGoing: {
     header: "How it's going",
-    text: "LoremCulpa occaecat commodo aliquip elit fugiat quis reprehenderit nostrud eu culpa id tempor commodo aute. Laboris exercitation esse cillum et mollit minim mollit esse sit et Lorem mollit amet ea. Et sunt sunt consequat minim nulla officia adipisicing reprehenderit minim ut anim. Ut sunt tempor exercitation laborum enim et eu esse. Et officia veniam excepteur consectetur ut elit.",
+    text: "With all the knowledge  I gained studying and communication skills developed during my logistics career, it didn't take long to become a fully fledged team player of the Neurotechnology front end team. My everyday tools are React, Typescript, Figma, GIT, REST APIs and daily communication with my and other team's developers, UI/UX designers and product owners.",
   },
   hobbies: {
     header: "Hobbies",
