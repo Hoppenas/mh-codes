@@ -1,6 +1,5 @@
-import { Avatar, Grid, IconButton, Typography } from "@mui/material";
+import { Avatar, Grid, Typography } from "@mui/material";
 import { FC, ReactNode } from "react";
-import GitHubIcon from "@mui/icons-material/GitHub";
 
 interface IPortfolioItem {
   image?: string;
@@ -28,6 +27,7 @@ const PortfolioItem: FC<IPortfolioItem> = ({
       margin="10px auto"
       borderRadius={2}
       bgcolor="rgba(135, 145, 154, 0.4)"
+      style={{ cursor: "pointer" }}
     >
       {image && (
         <Avatar
@@ -37,7 +37,7 @@ const PortfolioItem: FC<IPortfolioItem> = ({
           style={{ width: "100%", height: "fit-content" }}
         />
       )}
-      {logo}
+      {logo && <Grid style={{ width: "100%" }}>{logo}</Grid>}
       <Typography paddingY={2}>{name}</Typography>
       <Typography paddingY={2}>{technologies}</Typography>
       <Typography>{description}</Typography>
